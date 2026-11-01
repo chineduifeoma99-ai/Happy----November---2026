@@ -3,401 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#170b35">
-<title>Happy November 2026 | Peace Maker</title>
-
+<title>Happy November</title>
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+ margin:0;
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ font-family:Arial,sans-serif;
+ color:white;
+ background:linear-gradient(135deg,#080b2b,#42105d,#d34b55);
+ overflow:hidden;
 }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  background:
-    radial-gradient(ellipse at top, #6333a7 0%, transparent 55%),
-    linear-gradient(145deg, #100824, #241044, #090719);
-  overflow-x: hidden;
+.card{
+ width:90%;
+ max-width:430px;
+ padding:40px 22px;
+ border:1px solid #ffffff55;
+ border-radius:25px;
+ background:#ffffff18;
+ box-shadow:0 10px 40px #0006;
+ backdrop-filter:blur(12px);
 }
-
-.glow {
-  position: fixed;
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  background: #bd67ff;
-  filter: blur(100px);
-  opacity: .25;
-  pointer-events: none;
+h1{font-size:38px;color:#ffe18a}
+h2{font-size:25px}
+p{font-size:17px;line-height:1.8}
+.heart{font-size:45px;animation:pulse 1.5s infinite}
+button{
+ background:#ffe18a;
+ color:#321044;
+ border:0;
+ border-radius:30px;
+ padding:15px 25px;
+ font-size:16px;
+ font-weight:bold;
+ margin-top:15px;
 }
-
-.glow.one {
-  top: 5%;
-  left: -100px;
+#message{display:none;margin-top:20px}
+@keyframes pulse{
+ 50%{transform:scale(1.2)}
 }
-
-.glow.two {
-  right: -100px;
-  bottom: 5%;
-  background: #ffb52e;
-}
-
-main {
-  position: relative;
-  width: 100%;
-  max-width: 680px;
-  margin: auto;
-  padding: 25px 17px 35px;
-  text-align: center;
-}
-
-.brand {
-  display: inline-block;
-  padding: 10px 18px;
-  border: 1px solid #caa7ff;
-  border-radius: 30px;
-  background: #ffffff0c;
-  color: #f1dcff;
-  font-size: 12px;
-  letter-spacing: 3px;
-}
-
-.crown {
-  margin-top: 27px;
-  font-size: 52px;
-  animation: float 3s ease-in-out infinite;
-}
-
-h1 {
-  margin: 10px 0;
-  font-size: clamp(39px, 10vw, 68px);
-  line-height: 1.08;
-  font-weight: 900;
-  letter-spacing: -2px;
-}
-
-h1 span {
-  display: block;
-  background: linear-gradient(90deg, #fff4b5, #ffbd44, #fff4bd);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(0 4px 18px #ffbb4a40);
-}
-
-.year {
-  color: #d8baff;
-  font-size: 21px;
-  letter-spacing: 9px;
-  margin: 15px 0 25px;
-}
-
-.divider {
-  width: 90px;
-  height: 3px;
-  margin: 25px auto;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #a96bff, #ffd16c);
-}
-
-.intro {
-  color: #e9def8;
-  font-size: 17px;
-  line-height: 1.8;
-  max-width: 490px;
-  margin: 0 auto 25px;
-}
-
-.panel {
-  padding: 25px 20px;
-  border: 1px solid #ffffff25;
-  border-radius: 25px;
-  background: linear-gradient(135deg,
-    #ffffff12, #ffffff05);
-  box-shadow: 0 15px 50px #00000025;
-  backdrop-filter: blur(10px);
-}
-
-.panel h2 {
-  margin-top: 0;
-  color: #ffdc8b;
-  font-size: 23px;
-}
-
-.blessings {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.blessing {
-  padding: 17px 7px;
-  border-radius: 16px;
-  background: #ffffff0c;
-  border: 1px solid #ffffff12;
-}
-
-.blessing div {
-  font-size: 27px;
-  margin-bottom: 9px;
-}
-
-.blessing strong {
-  font-size: 14px;
-  color: #f5eaff;
-}
-
-button {
-  width: 100%;
-  max-width: 340px;
-  display: block;
-  margin: 15px auto;
-  padding: 16px 20px;
-  border: 0;
-  border-radius: 35px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform .2s, filter .2s;
-}
-
-button:active {
-  transform: scale(.97);
-}
-
-.primary {
-  margin-top: 25px;
-  color: #25113d;
-  background: linear-gradient(100deg, #ffe7a1, #ffbd48);
-  box-shadow: 0 7px 25px #ffbf4930;
-}
-
-.secondary {
-  color: white;
-  background: #ffffff12;
-  border: 1px solid #ffffff40;
-}
-
-#message {
-  display: none;
-  margin-top: 20px;
-  padding: 22px 16px;
-  border-radius: 18px;
-  color: #fff2c8;
-  background: #ffffff0c;
-  line-height: 1.9;
-  animation: appear .6s ease;
-}
-
-.quote {
-  margin: 28px 0;
-  color: #e6d6ff;
-  font-size: 17px;
-  font-style: italic;
-  line-height: 1.8;
-}
-
-.signature {
-  margin-top: 30px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #ffda83;
-}
-
-footer {
-  padding: 20px 0 10px;
-  color: #b8a6d1;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-.particle {
-  position: fixed;
-  bottom: -30px;
-  pointer-events: none;
-  animation: rise linear forwards;
-  z-index: 0;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes rise {
-  to {
-    transform: translateY(-110vh) rotate(40deg);
-    opacity: 0;
-  }
-}
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 360px) {
-  main { padding-left: 12px; padding-right: 12px; }
-  .panel { padding: 20px 12px; }
-  .blessing strong { font-size: 12px; }
-}
+footer{margin-top:25px;font-size:13px;color:#ffe8c2}
 </style>
 </head>
-
 <body>
-<div class="glow one"></div>
-<div class="glow two"></div>
-
-<main>
-  <div class="brand">✦ A NEW MONTH • A NEW BEGINNING ✦</div>
-
-  <div class="crown">👑</div>
-
-  <h1>
-    HAPPY
-    <span>NOVEMBER</span>
-  </h1>
-
-  <div class="year">20  •  26</div>
-
-  <div class="divider"></div>
-
-  <p class="intro">
-    Welcome to a beautiful new month!
-    May November open new doors, bring
-    unexpected good news, and fill your
-    life with reasons to smile.
-  </p>
-
-  <section class="panel">
-    <h2>✨ November Blessings ✨</h2>
-    <p style="color:#d9cbea;line-height:1.7">
-      May these blessings follow you throughout
-      this wonderful month.
-    </p>
-
-    <div class="blessings">
-      <div class="blessing">
-        <div>🙏</div>
-        <strong>Peace of Mind</strong>
-      </div>
-      <div class="blessing">
-        <div>💰</div>
-        <strong>Financial Progress</strong>
-      </div>
-      <div class="blessing">
-        <div>❤️</div>
-        <strong>Love & Happiness</strong>
-      </div>
-      <div class="blessing">
-        <div>🌟</div>
-        <strong>Success & Favour</strong>
-      </div>
-      <div class="blessing">
-        <div>🌿</div>
-        <strong>Good Health</strong>
-      </div>
-      <div class="blessing">
-        <div>🚪</div>
-        <strong>New Opportunities</strong>
-      </div>
-    </div>
-
-    <button class="primary" onclick="showBlessing()">
-      ✨ Open Your Special Blessing
-    </button>
-
-    <div id="message" aria-live="polite">
-      <div style="font-size:35px">💛🙏✨</div>
-      <h2>You Deserve Good Things!</h2>
-      May this November bring you closer to
-      your dreams. May your efforts produce
-      good results, your heart find peace,
-      and your days be filled with joy.
-      <br><br>
-      May good news locate you, may new
-      opportunities find you, and may you
-      have many reasons to be grateful.
-      <br><br>
-      <strong>Have a blessed and beautiful November!</strong>
-    </div>
-  </section>
-
-  <p class="quote">
-    “A new month is another chance to grow,
-    to shine, and to become better than yesterday.”
-  </p>
-
-  <button class="secondary" onclick="shareGreeting()">
-    ↗ Share This Greeting
-  </button>
-
-  <div class="divider"></div>
-
-  <div class="signature">Made with ❤️ by<br>
-    Peace ✌️ Maker
-  </div>
-
-  <footer>
-    HAPPY NOVEMBER 2026 · STAY BLESSED · KEEP SHINING
-  </footer>
-</main>
-
+<div class="card">
+<div class="heart">❤️</div>
+<h1>HAPPY NOVEMBER!</h1>
+<h2>Welcome to a New Month</h2>
+<p>May this November bring you happiness, peace, favour, success and countless reasons to smile.</p>
+<button onclick="showMessage()">Open Your November Blessing</button>
+<div id="message">
+<h2>✨ Your New Month Blessing ✨</h2>
+<p>May every new day bring fresh opportunities. May your dreams grow, your efforts succeed and your heart remain full of hope.</p>
+<p>Happy New Month! ❤️</p>
+</div>
+<footer>Created with ❤️ by Peace ✌️ Maker</footer>
+</div>
 <script>
-function showBlessing() {
-  const message = document.getElementById("message");
-  message.style.display = "block";
-  message.scrollIntoView({
-    behavior: "smooth",
-    block: "nearest"
-  });
+function showMessage(){
+document.getElementById("message").style.display="block";
 }
-
-async function shareGreeting() {
-  const greeting =
-    "Happy November 2026! 🎉❤️ May this month bring you peace, good health, success, happiness and unexpected blessings. From Peace ✌️ Maker.";
-
-  try {
-    if (navigator.share) {
-      await navigator.share({
-        title: "Happy November 2026",
-        text: greeting,
-        url: window.location.href
-      });
-    } else if (navigator.clipboard) {
-      await navigator.clipboard.writeText(
-        greeting + "\n" + window.location.href
-      );
-      alert("Greeting copied! You can paste it into WhatsApp.");
-    } else {
-      prompt("Copy this greeting and website link:", 
-        greeting + "\n" + window.location.href);
-    }
-  } catch (error) {
-    if (error.name !== "AbortError") {
-      alert("You can copy your website link from the browser address bar.");
-    }
-  }
-}
-
-function createParticle() {
-  const particle = document.createElement("div");
-  particle.className = "particle";
-  particle.textContent = ["✨", "💛", "⭐", "💜"][
-    Math.floor(Math.random() * 4)
-  ];
-  particle.style.left = Math.random() * 100 + "vw";
-  particle.style.fontSize = (12 + Math.random() * 15) + "px";
-  particle.style.animationDuration = (7 + Math.random() * 7) + "s";
-  document.body.appendChild(particle);
-
-  setTimeout(() => particle.remove(), 15000);
-}
-
-setInterval(createParticle, 1000);
 </script>
 </body>
 </html>
